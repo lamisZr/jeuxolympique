@@ -1,0 +1,6 @@
+com\jeuxolympique\sport_service\Sport.class
+com\jeuxolympique\sport_service\SportController.class
+com\jeuxolympique\sport_service\SportRepository.class
+com\jeuxolympique\sport_service\WebClientConfig.class
+com\jeuxolympique\sport_service\SportService.class
+com\jeuxolympique\sport_service\SportServiceApplication.class

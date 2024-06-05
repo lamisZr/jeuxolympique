@@ -1,0 +1,94 @@
+version: '3.8'
+
+services:
+  site-service:
+    build: ./site-service
+    ports:
+      - "8081:8081"
+    networks:
+     - site-service-network
+     - sport-service-network
+     - calendrier-service-network
+     - db-network
+    depends_on:
+      - discovery-server
+  discovery-server:
+    build: ./discovery-server
+    ports:
+      - "8761:8761"
+    networks:
+     - site-service-network
+     - sport-service-network
+     - calendrier-service-network
+     - db-network
+  sport-service:
+    build: ./sport-service
+    ports:
+      - "8083:8083"
+    networks:
+     - site-service-network
+     - sport-service-network
+     - calendrier-service-network
+     - db-network
+    depends_on:
+      - discovery-server
+      - redis
+  calendrier-service:
+    build: ./calendrier-service
+    ports:
+      - "8082:8082"
+    networks:
+      - site-service-network
+      - sport-service-network
+      - calendrier-service-network
+      - db-network
+    depends_on:
+      - discovery-server
+      - cassandra
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8080:8080"
+    networks:
+      - site-service-network
+      - sport-service-network
+      - calendrier-service-network
+      - db-network
+    depends_on:
+      - site-service
+      - sport-service
+      - calendrier-service
+      - discovery-server 
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - site-service-network
+      - sport-service-network
+      - calendrier-service-network
+      - db-network
+  cassandra:
+    container_name: cassandradb
+    image: cassandra:latest
+    ports:
+      - "9042:9042"
+    networks:
+      - site-service-network
+      - sport-service-network
+      - calendrier-service-network
+      - db-network
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - site-service-network
+      - sport-service-network
+      - calendrier-service-network
+      - db-network    
+networks:
+  site-service-network:
+  sport-service-network:
+  calendrier-service-network:
+  db-network:

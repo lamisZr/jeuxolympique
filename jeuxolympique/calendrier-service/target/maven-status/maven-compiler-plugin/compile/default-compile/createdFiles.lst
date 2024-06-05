@@ -1,0 +1,11 @@
+com\jeuxolympique\calendrier_service\CassandraConfig.class
+com\jeuxolympique\calendrier_service\CalendrierServiceApplication.class
+com\jeuxolympique\calendrier_service\PlanningRepository.class
+com\jeuxolympique\calendrier_service\PlanningController.class
+com\jeuxolympique\calendrier_service\Planning.class
+com\jeuxolympique\calendrier_service\WebClientConfig.class
+com\jeuxolympique\calendrier_service\Calendrier.class
+com\jeuxolympique\calendrier_service\CalendrierRepository.class
+com\jeuxolympique\calendrier_service\CalendrierService.class
+com\jeuxolympique\calendrier_service\CalendrierController.class
+com\jeuxolympique\calendrier_service\PlanningService.class

@@ -1,0 +1,11 @@
+com\jeuxolympique\site_service\SiteSitueARepository.class
+com\jeuxolympique\site_service\SiteController.class
+com\jeuxolympique\site_service\SiteService.class
+com\jeuxolympique\site_service\WebClientConfig.class
+com\jeuxolympique\site_service\SiteSitueADto.class
+com\jeuxolympique\site_service\SiteRepository.class
+com\jeuxolympique\site_service\Site.class
+com\jeuxolympique\site_service\SiteDto.class
+com\jeuxolympique\site_service\SiteSitueA.class
+com\jeuxolympique\site_service\SiteServiceApplication.class
+com\jeuxolympique\site_service\SiteDto$SiteDtoBuilder.class
